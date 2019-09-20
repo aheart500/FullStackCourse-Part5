@@ -1,0 +1,120 @@
+body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background: url('./images/sky.jpg') no-repeat;
+    font-family: 'Courier New', Courier, monospace;
+}
+body::after{
+    position: absolute;
+    top:0;
+    left: 0;
+    width: 100%;
+    height:100vh;
+    background-color: black;
+    opacity: 0.5;
+    content:'';
+}
+.App{
+    position: absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+    border:1px solid black;
+    box-shadow: 0 0 10px black;
+    background: white;
+    width:20rem;
+    z-index: 2;
+}
+.App form{
+    padding: 1rem;
+    width: 90%;
+}
+.App form input[type="text"], .App form input[type="password"]{
+    width: 90%;
+    height: 2rem;
+    font-size: 1.2rem;
+    padding: 0.4rem 0.5rem;
+    margin: 0.5rem auto;
+    border:2px solid transparent;
+    border-bottom:2px solid rgb(251, 144, 255);
+    outline: 0;
+}
+.App form input[type="text"]:focus, .App form input[type="password"]:focus{
+    border:2px solid rgb(220, 27, 226);
+}
+.App form button{
+    height: 2rem;
+    width:50%;
+    margin: 0.5rem 4rem;
+    background-color: rgb(251, 144, 255);
+    font-size: 1.2rem;
+    border:0;
+    cursor: pointer;
+    transition: all 0.3s ease-out;
+}
+.App form button:hover{
+    transform : scale(1.05);
+    transition: all 0.3s ease-in;
+}
+.Blog-site{
+    z-index:2;
+    position: relative;
+    background-color: white;
+    width:80%;
+    margin: auto;
+    box-shadow: 0 0 10px black;
+}
+.Blog-site h2{
+    padding:1rem 0 0 1rem;
+}
+.Blog-site h3{
+    margin-left : 1rem;
+}
+.Blog-site button{
+    height: 2rem;
+    background-color: rgb(251, 144, 255);
+    font-size: 1.2rem;
+    border:0;
+    cursor: pointer;
+    transition: all 0.3s ease-out;
+}
+.Blog-site button:hover{
+    transform : scale(1.05);
+    transition: all 0.3s ease-in;
+}
+.create-form{
+    display: grid;
+    grid-template-rows: repeat(3,1fr);
+    grid-template-columns: minmax(3rem,5rem) minmax(10rem,25rem);
+    margin : 0 2rem;
+    row-gap: 0.5rem;
+
+}
+.create-form button{
+    grid-column: span 2;
+}
+ul li ul li button{
+    height:inherit !important;
+    font-size: inherit !important;
+    margin-left: 1rem;
+}
+.notification{
+    border: 1px solid lightgreen;
+    color:green;
+    padding: 1rem;
+    margin:1rem;
+    background-color: lightgrey;
+}
+.failure{
+    border: 1px solid red;
+    color:red;
+}
+@media (max-width:572px){
+    .create-form{
+        grid-template-columns: 1fr;
+    }
+    .create-form button{
+        grid-column: 1;
+    }
+}
